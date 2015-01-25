@@ -12,6 +12,7 @@ gem 'mini_magick', '~> 4.0.0.rc'
 gem 'omniauth'
 gem 'omniauth-instagram', '~> 1.0.1'
 gem 'jbuilder', '~> 2.0'
+gem 'bootstrap-sass', '~> 3.3.3'
 
 gem 'sdoc', '~> 0.4.0',          group: :doc
 gem 'spring',        group: :development
