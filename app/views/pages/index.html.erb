@@ -1,4 +1,12 @@
 <div class="yo">
   <%= link_to 'Instagram', "/auth/instagram", class: "btn btn-warning" %>
-  <%= @instagram %>
+<br><br><hr>
+  <% @instagram["data"].each do |instagram| %>
+  <img src="<%= instagram['images']['thumbnail']['url'] %>" alt="" />
+    <% end %>
+
+  
+
+
+
 </div>
