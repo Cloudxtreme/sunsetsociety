@@ -11,8 +11,8 @@ class AuthenticationsController < ApplicationController
       redirect_to :root
     elsif current_user
       current_user.authentications.create!(provider: omniauth['provider'], uid: omniauth['uid'])
-      # current_user.update_attributes(omniauth['provider'] => omniauth['info']['nickname'])
-      # flash[:notice] = "Successfully added #{omniauth['provider']} authentication"
+      current_user.update_attributes(omniauth['provider'] => omniauth['info']['nickname'])
+      flash[:notice] = "Successfully added #{omniauth['provider']} authentication"
       redirect_to :root
     else
       user = User.new(first_name: omniauth['info']['name'])

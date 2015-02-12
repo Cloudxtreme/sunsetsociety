@@ -8,4 +8,6 @@ class ApplicationController < ActionController::Base
       User.find_by(id: session[:id])
     end
 
+    helper_method :current_user
+
 end
