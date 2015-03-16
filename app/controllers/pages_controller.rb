@@ -1,7 +1,7 @@
 class PagesController < ApplicationController
 
   def index
-    uri = URI.parse("https://api.instagram.com/v1/tags/sunset/media/recent?access_token=#{ENV['INSTAGRAM_ACCESS_TOKEN']}&count=25")
+    uri = URI.parse("https://api.instagram.com/v1/tags/sundown/media/recent?access_token=#{ENV['INSTAGRAM_ACCESS_TOKEN']}&count=25")
     run = (http = Net::HTTP.new(uri.host, uri.port)
     http.use_ssl = true
     http.verify_mode = OpenSSL::SSL::VERIFY_NONE

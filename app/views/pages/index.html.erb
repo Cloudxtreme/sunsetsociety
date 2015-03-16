@@ -1,7 +1,7 @@
 <div class="yo">
   <%= link_to 'Instagram', "/auth/instagram", class: "btn btn-warning" %>
   <div class="page-header">
-    <h1>#sunset</h1><hr>
+    <h1>#sundown</h1><hr>
 
     <% @instagram["data"].each do |instagram| %>
     <a href="<%= instagram['link'] %>"><img src="<%= instagram['images']['standard_resolution']['url'] %>" alt="" class="img-circle" /></a>
