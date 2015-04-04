@@ -30,7 +30,11 @@
       <%= instagram['tags'] %> <hr>
 
       <p class="bg-success">SUNSET LOCATION</p> <br>
-      <%= instagram['location']%><hr>
+      <% if instagram['location'].present? %>
+        latitude: <%= instagram['location']['latitude']%>
+        longitude: <%= instagram['location']['longitude']%>
+      <% end %>
+      <hr>
 
       <p class="bg-success">LINK TO PICTURE</p><br>
       <a href="<%= instagram['link'] %>"> <%= instagram['link'] %></a><br><hr>
