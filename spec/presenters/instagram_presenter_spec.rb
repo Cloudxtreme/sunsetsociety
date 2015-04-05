@@ -7,7 +7,20 @@ describe InstagramPresenter do
      ["sunset", "sundown", "esse", "vsco", "chemnitz", "hilbersdorf", "karl"],
     "type"=>"image",
     "location"=>{'latitude' => 1234, 'longitude' => 4567},
-    "comments"=>{"count"=>0, "data"=>[]},
+    "comments"=>
+
+      {"count"=>1,
+       "data"=>
+        [{"created_time"=>"1428216369",
+          "text"=>"ᔕO ᗷEᗩᑌTIᖴᑌᒪ 👏👏👏",
+          "from"=>
+           {"username"=>"klebernarvaes",
+            "profile_picture"=>
+             "https://igcdn-photos-b-a.akamaihd.net/hphotos-ak-xpa1/t51.2885-19/927454_1546556072224145_1689611811_a.jpg",
+            "id"=>"337964818",
+            "full_name"=>"KᏞᎬᏴᎬᎡ NᎪᎡᏙᎪᎬᏚ"},
+          "id"=>"956270677613675969"}]},
+
     "filter"=>"Normal",
     "created_time"=>"1428086500",
     "link"=>"https://instagram.com/p/1BfEl2D7Uf/",
@@ -73,8 +86,22 @@ describe InstagramPresenter do
 
 
     presenter = InstagramPresenter.new(data)
-
+    expect(presenter.attribution).to eq nil
+    expect(presenter.tags).to eq  ["sunset", "sundown", "esse", "vsco", "chemnitz", "hilbersdorf", "karl"]
+    expect(presenter.link).to eq "https://instagram.com/p/1BfEl2D7Uf/"
     expect(presenter.latitude).to eq 1234
     expect(presenter.longitude).to eq 4567
+  #   expect(presenter.comments).to eq
+  #     {"count"=>1,
+  #      "data"=>
+  #       [{"created_time"=>"1428216369",
+  #         "text"=>"ᔕO ᗷEᗩᑌTIᖴᑌᒪ 👏👏👏",
+  #         "from"=>
+  #          {"username"=>"klebernarvaes",
+  #           "profile_picture"=>
+  #            "https://igcdn-photos-b-a.akamaihd.net/hphotos-ak-xpa1/t51.2885-19/927454_1546556072224145_1689611811_a.jpg",
+  #           "id"=>"337964818",
+  #           "full_name"=>"KᏞᎬᏴᎬᎡ NᎪᎡᏙᎪᎬᏚ"},
+  #         "id"=>"956270677613675969"}]}
   end
 end

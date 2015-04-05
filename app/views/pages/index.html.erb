@@ -1,5 +1,9 @@
 <div class="yo">
   <%= link_to 'Instagram', "/auth/instagram", class: "btn btn-warning" %>
+
+  <%= @latitude %>
+
+
   <div class="page-header">
     <h1>#sundo</h1><hr>
 
@@ -29,10 +33,14 @@
       <p class="bg-success">SUNSET TAGS</p> <br>
       <%= instagram['tags'] %> <hr>
 
+      <%= instagram['location'] %>
+
       <p class="bg-success">SUNSET LOCATION</p> <br>
       <% if instagram['location'].present? %>
-        latitude: <%= instagram['location']['latitude']%>
-        longitude: <%= instagram['location']['longitude']%>
+        name: <%= instagram['location']['name'] %> <br>
+        latitude: <%= instagram['location']['latitude']%> <br>
+        longitude: <%= instagram['location']['longitude']%> <br>
+        location_id: <%= instagram['location']['id'] %> <br>
       <% end %>
       <hr>
 
@@ -55,6 +63,9 @@
       <p class="bg-success">FULL NAME</p>
       <h3><%= instagram['user']['full_name'] %></h3><br>
 
+
+
+???? left off on comments 
 
 
       <br><br>

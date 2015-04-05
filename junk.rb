@@ -3,12 +3,20 @@
 #
 # <% @instagram["data"].each do |instagram| %>
 # <img src="<%= instagram['images']['thumbnail']['url'] %>" alt="" />
+
+
+#    <p class="bg-success">COMMENTS</p>
+#     <% if instagram['comments']['data'].present? %>
+#       <%= instagram['comments']['data'][1]['created_time'] %>
+#     <h3></h3><br>
 #
 #
+#     <% end %>
 # #
-# #
-# #
-# # {"attribution"=>nil,
+# # #
+# # #
+# # #
+# # # {"attribution"=>nil,
 # #   "tags"=>
 # #    ["beautiful",
 # #     "summer",
@@ -105,3 +113,101 @@
 #      "https://igcdn-photos-g-a.akamaihd.net/hphotos-ak-xpf1/t51.2885-19/10413865_765625290156934_215308353_a.jpg",
 #     "id"=>"43603411",
 #     "full_name"=>"Juan carlos  Santana Reyes"}},
+
+#
+# OLD AS OF post g
+# <div class="yo">
+#   <%= link_to 'Instagram', "/auth/instagram", class: "btn btn-warning" %>
+#
+#
+#   <div class="page-header">
+#     <h1>#sundo</h1><hr>
+#
+#     <% @instagram["data"].each do |instagram| %>
+#     <a href="<%= instagram['link'] %>"><img src="<%= instagram['images']['standard_resolution']['url'] %>" alt="" class="img-circle" /></a>
+#
+#     <% end %><br><hr>
+#   </div>
+#
+#
+#
+#   <br><br><hr>
+#       <% @instagram["data"].each do |instagram| %>
+#
+#       <p class="bg-primary">NEW USER</p><hr>
+#
+#       <p class="bg-success">SUNSET PICTURE THUMBNAIL (BOOTSTRAP CIRCLE)</p> <br>
+#       <img src="<%= instagram['images']['thumbnail']['url'] %>" alt="" class="img-circle" /> <br><hr>
+#
+#       <p class="bg-success">SUNSET PICTURE LOW RESOLUTION (BOOTSTRAP ROUNDED)</p> <br>
+#       <img src="<%= instagram['images']['low_resolution']['url'] %>" alt="" class="img-rounded" /> <br><hr>
+#
+#       <p class="bg-success">SUNSET PICTURE LOW RESOLUTION (BOOTSTRAP THUMBNAIL) </p> <br>
+#       <img src="<%= instagram['images']['standard_resolution']['url'] %>" alt="" class="img-thumbnail" /> <br><hr>
+#
+#
+#       <p class="bg-success">SUNSET TAGS</p> <br>
+#       <%= instagram['tags'] %> <hr>
+#
+#       <%= instagram['location'] %>
+#
+#       <p class="bg-success">SUNSET LOCATION</p> <br>
+#       <% if instagram['location'].present? %>
+#         name: <%= instagram['location']['name'] %> <br>
+#         latitude: <%= instagram['location']['latitude']%> <br>
+#         longitude: <%= instagram['location']['longitude']%> <br>
+#         location_id: <%= instagram['location']['id'] %> <br>
+#       <% end %>
+#       <hr>
+#
+#       <p class="bg-success">LINK TO PICTURE</p><br>
+#       <a href="<%= instagram['link'] %>"> <%= instagram['link'] %></a><br><hr>
+#
+#       <p class="bg-success">LIKES FOR THIS PICTURE</p><br>
+#       <h2><%= instagram['likes']['count'] %></h2><hr>
+#
+#       <p class="bg-success">USER PROFILE PICTURE</p><br>
+#       <img src="<%= instagram['user']['profile_picture'] %>" alt="" class="img-circle"/> <hr>
+#
+#       <p class="bg-success">USER NAME</p><br>
+#       <h3><%= instagram['user']['username'] %></h3><hr>
+#
+#       <p class="bg-success">LINK TO USER PROFILE</p><br>
+#       <a href="https://instagram.com/<%= instagram['user']['username'] %>">Link to <%= instagram['user']['username'] %>'s Account</a>
+#       <h3></h3><hr>
+#
+#       <p class="bg-success">FULL NAME</p>
+#       <h3><%= instagram['user']['full_name'] %></h3><br>
+#
+#
+#
+#       <br><br>
+#
+#     <% end %>
+#
+#     <br><br>
+#     <!-- <%= pp(@instagram) %>
+#     </div> -->
+#
+#     <br><br>
+#
+# <br><br>
+#
+# <h3>OLD THUMBNAIL</h3><hr>
+#
+#
+# <% @instagram["data"].each do |instagram| %>
+# <img src="<%= instagram['images']['thumbnail']['url'] %>" alt="" class="img-thumbnail" />
+# <% end %><br><hr>
+#
+# <h3>OLD ROUNDED</h3><hr>
+#
+# <% @instagram["data"].each do |instagram| %>
+# <img src="<%= instagram['images']['thumbnail']['url'] %>" alt="" class="img-rounded" />
+# <% end %><br><hr>
+#
+# <h3>OLD CIRCLE(CUSTOM CSS)</h3><hr>
+#
+# <% @instagram["data"].each do |instagram| %>
+# <img src="<%= instagram['images']['standard_resolution']['url'] %>" alt="" class="img-circle" />
+# <% end %><br><hr>
